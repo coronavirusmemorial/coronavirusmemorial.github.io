@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Coronavirus Memorial</title>
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="z" id="total-deaths">2,254,030 People</h1>
+			<h4 class="z" id="total-cases">(from 104,120,115 Cases)</h4>
+			<p class="z">That is how many people have died from SARS-CoV-2 (known as COVID-19/Coronavirus) and its variants.</p>
+			<p class="z">If you're reading this, chances are you're already rather aware of the on-going situation.</p>
+			<p class="z">I have created this website with the hope that, in time, every person who has died from this virus will never be forgotten.</p>
+			<br />
+			<br />
+			<p class="z">Personally I do not have experience with managing large public projects, and am unsure of how best to go about this, so if you have skills and would like to help, feel free to get in touch.</p>
+			<div><a href="./contact.html"><div>contact</div></a><a href="./about.html"><div>about</div></a></div>
+		</div>
+		<script async>
+			fetch("https://api.covid19api.com/summary").then(async (rawData) => {
+				const data = await rawData.json();
+				const totalDeaths = parseInt(data.Global.TotalDeaths);
+				const totalCases = parseInt(data.Global.TotalConfirmed);
+				console.log(totalDeaths.toLocaleString());
+				document.getElementById("total-deaths").innerText = `${totalDeaths.toLocaleString()} People`;
+				document.getElementById("total-cases").innerText = `(from ${totalCases.toLocaleString()} Cases)`;
+			});
+		</script>
+	</body>
+</html>

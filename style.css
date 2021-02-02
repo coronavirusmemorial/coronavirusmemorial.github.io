@@ -1,0 +1,179 @@
+@import url("/Metropolis/stylesheet.css");
+@import url("/zilla-slab/stylesheet.css");
+/*@import url("/linden-hill/stylesheet.css");*/
+@import url("/Inter/inter.css");
+
+@import url("./Metropolis/stylesheet.css");
+
+.colour::before {
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 100%;
+	background-image: linear-gradient(var(--rykan-accent-primary), var(--rykan-accent-secondary));
+	left: -48px;
+}
+
+.colour {
+	position: relative;
+}
+
+a {
+	color: inherit;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 16px;
+	text-transform: lowercase;
+	text-decoration: none;
+	margin-right: 40px;
+	transition-duration: 100ms;
+	position: relative;
+	cursor: pointer;
+	display: inline-flex;
+	flex-direction: row;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+a div, a::after {
+	transition-duration: 100ms;
+}
+
+a:active div, a:active::after {
+	opacity: 0.6;
+}
+
+.icon-container {
+	height: 16px;
+	padding-left: 8px;
+}
+
+.icon-container svg {
+	margin: -8px;
+}
+
+a::before {
+	content: "";
+	/* background-image: linear-gradient(to right, var(--rykan-accent-primary), var(--rykan-accent-secondary)); */
+	background-color: var(--rykan-accent-primary);
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	left: 0;
+	bottom: -4px;
+	transition-duration: 100ms;
+	pointer-events: none;
+	transform: scaleX(0);
+	transform-origin: 0 0;
+}
+
+a:hover::before {
+	transform: scaleX(1);
+}
+
+a::after {
+	content: url("./appbar.arrow.right.svg");
+	/*content: url(#icon);*/
+	width: 32px;
+	height: 32px;
+	margin: -8px;
+	padding-left: 8px;
+	fill: var(--icon-fill);
+}
+
+.dark a::after {
+	filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(130deg) brightness(119%) contrast(116%);
+}
+
+.z {
+	margin: 0 0 20px;
+}
+
+h4.z {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+
+h2.z {
+	font-size: 40px;
+	font-weight: 200;
+	line-height: 40px;
+	text-transform: lowercase;
+}
+
+h1.z {
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 64px;
+	text-transform: uppercase;
+}
+
+p.z {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 16px;
+	text-transform: none;
+	max-width: 640px;
+}
+
+div.container {
+	display: flex;
+	flex-direction: column;
+	margin: auto 160px;
+	align-self: stretch;
+	justify-self: stretch;
+	flex: 1;
+	justify-content: center;
+	height: 100%;
+}
+
+@media (max-width: 800px) {
+	div.container {
+		margin: auto 5vw;
+	}
+}
+
+body, html {
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	align-content: stretch;
+	justify-items: stretch;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 0;
+	font-family: /* "New Rail Alphabet", */ Metropolis, sans-serif;
+	flex-grow: 1;
+}
+
+.dark {
+	background: black;
+	color: white;
+	--icon-fill: white;
+	--link-active: rgba(255, 255, 255, 0.6);
+}
+
+.dark p {
+	font-weight: 400;
+}
+
+.light {
+	background: white;
+	color: black;
+	--icon-fill: black;
+	--link-active: rgba(0, 0, 0, 0.6);
+}
+
+.light p {
+	font-weight: 500;
+}
+
+:root {
+	--rykan-accent-primary: #F10DA2;
+	--rykan-accent-secondary: #FE5000;
+	cursor: default;
+}
