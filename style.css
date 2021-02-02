@@ -130,6 +130,12 @@ div.container {
 	flex: 1;
 	justify-content: center;
 	height: 100%;
+	opacity: 1;
+	transition-duration: 100ms;
+}
+
+div.container.loading {
+	opacity: 0;
 }
 
 @media (max-width: 800px) {
