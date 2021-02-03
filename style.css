@@ -183,4 +183,5 @@ body, html {
 	--rykan-accent-primary: #F10DA2;
 	--rykan-accent-secondary: #FE5000;
 	cursor: default;
+	font-variant-numeric: tabular-nums;
 }
